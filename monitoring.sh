@@ -1,3 +1,4 @@
+#!/bin/bash
 #The architecture of your operating system and its kernel version
 architecture=$(uname -a)
 
@@ -13,9 +14,9 @@ used_RAM=$(free --mega | grep "Mem:" | awk '{print $3}')
 used_RAM_percent=$(free --mega | grep "Mem:" | awk '{printf("%.2f", $3/$2*100)}')
 
 #The current available storage on your server and its utilization rate as a percentage
-total_disk_space=$(df -m | grep "/dev/" | grep -v "/boot" | grep -v "tmpfs" | awk '{disk_total += $2} END {printf "%.1f", disk_total/1024}')
-used_disk_space=$(df -m | grep "/dev/" | grep -v "/boot" | grep -v "tmpfs" | awk '{disk_use += $3} END {print disk_use}')
-used_disk_percent=$(df -m | grep "/dev/" | grep -v "/boot" | awk '{use += $3} {total += $2} END {printf ("%d", use/total*100)}')
+total_disk_space=$(df -m | grep "/dev/" | grep -v "/boot" | awk '{disk_total += $2} END {printf "%.1f", disk_total/1024}')
+used_disk_space=$(df -m | grep "/dev/" | grep -v "/boot" | awk '{disk_use += $3} END {print disk_use}')
+used_disk_percent=$(df -m | grep "/dev/" | grep -v "/boot" | awk '{use += $3} {total += $2} END {printf("%d", use/total*100)}')
 
 #The current utilization rate of your processors as a percentage 
 cpu_use=$(vmstat | tail -1 | awk '{printf "%.1f", 100 - $15}')
@@ -40,8 +41,7 @@ MAC=$(ip link | grep "link/ether" | awk '{print $2}')
 #The number of commands executed with the sudo program
 commands_sudo=$(journalctl _COMM=sudo | grep COMMAND | wc -l)
 
-
-wall "  Architecture:   $architecture
+output="        Architecture:   $architecture
         CPU:            $nr_pysical_processors
         vCPU:           $nr_virtual_processors
         Memory Usage:   $used_RAM/"$total_RAM"MB ($used_RAM_percent%)
@@ -53,3 +53,7 @@ wall "  Architecture:   $architecture
         User log:       $users
         Network:        IP $IP ($MAC)
         Sudo:           $commands_sudo cmd"
+echo "$output" > /dev/tty1
+for other_terminals in $(who | grep sshd | awk '{print $3}'); do echo "$output" > /dev/$other_terminals; done
+exit 0
+
