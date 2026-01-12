@@ -104,21 +104,24 @@ Its stability, vast package repositories, and widespread use in production serve
 ## Resources
 
 ### References
-- **Born2BeRoot guide sourced by gemartin99** https://noreply.gitbook.io/born2beroot
-- **For monitoring.sh bash skript:** 
-https://askubuntu.com/questions/1292702/how-to-get-number-of-phy-logical-cores
-https://stackoverflow.com/questions/4538253/how-can-i-exclude-one-word-with-grep
-https://serverfault.com/questions/69283/when-to-use-single-quotes-double-quotes-or-no-quotes-in-grep
-https://www.w3schools.com/bash/bash_awk.php
-https://de.wikipedia.org/wiki/Transmission_Control_Protocol
-https://askubuntu.com/questions/892604/what-is-the-meaning-of-exit-0-exit-1-and-exit-2-in-a-bash-script
-- **Understanding concepts:**
-https://blog.packagecloud.io/know-the-difference-between-apt-and-aptitude/
-https://www.howtogeek.com/virtualbox-vs-utm-which-is-best-for-linux-vms-on-mac/
-https://firewalld.org/
+**Born2BeRoot guide sourced by gemartin99**
+- https://noreply.gitbook.io/born2beroot
+
+**For monitoring.sh bash skript:** 
+- https://askubuntu.com/questions/1292702/how-to-get-number-of-phy-logical-cores
+- https://stackoverflow.com/questions/4538253/how-can-i-exclude-one-word-with-grep
+- https://serverfault.com/questions/69283/when-to-use-single-quotes-double-quotes-or-no-quotes-in-grep
+- https://www.w3schools.com/bash/bash_awk.php
+- https://de.wikipedia.org/wiki/Transmission_Control_Protocol
+- https://askubuntu.com/questions/892604/what-is-the-meaning-of-exit-0-exit-1-and-exit-2-in-a-bash-script
+
+**Understanding concepts:**
+- https://blog.packagecloud.io/know-the-difference-between-apt-and-aptitude/
+- https://www.howtogeek.com/virtualbox-vs-utm-which-is-best-for-linux-vms-on-mac/
+- https://firewalld.org/
 
 ### Peers
-Kian helped me with every question I had regarding the project. Anna sent me the guide and did the project paralell to me for emotional support. Additionally Stefan A. and David helped me with struggles with the skript.
+Kian helped me with every question I had regarding the project. Anna sent me the guide and did the project paralell to me for emotional support. Additionally Stefan A. and David helped me with struggles with the skript. And in the end Vivian checked my virtual machine to see if it is all done correctly.
 
 ### AI Usage Statement
 Artificial Intelligence (specifically DeepSeek) was used as a tool during this project in the following ways:
